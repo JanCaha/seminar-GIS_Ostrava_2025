@@ -1,0 +1,32 @@
+---
+title: "Použití QGIS API a nástrojů v komplexních workflow"
+author: "Jan Caha"
+date: 2025-03-05
+date-format: "YYYY-MM-DD"
+format: 
+    revealjs
+footer: "Materiály dostupné:"
+code-line-numbers: true
+execute:
+  echo: true
+  eval: false
+---
+
+## QGIS Python API (PyQGIS)
+
+- open source binding QGIS (C++) do Pythonu
+- nejkomplexnější API pro zpracování prostorových dat, využívá většinu zásadních GIS knihoven
+- umožňuje vytvářet pluginy ale i skripty  
+
+## Instalace
+
+- vícero možností - základní instalace, OSGeo4W atd.
+- pro integraci QGIS s komplexnímí Python knihovnami je nejlepší použít **Conda**
+- vytvoření prostředí s QGIS a potřebnými knihovnami, nejméně problematické pro komplexní knihovny
+
+## Algoritmy a postupy
+
+- většina algoritmů pro zpracování dat či komplexních postupů již existuje v knihovnách
+- velká část programátorské práce je převod dat mezi různými formáty pro zpracování či tvorba dílčích částí dat
+
+# Dotazy? {.center}
