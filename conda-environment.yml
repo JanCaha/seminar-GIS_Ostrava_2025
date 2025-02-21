@@ -1,0 +1,26 @@
+name: seminar_GISOVA
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.12
+  - pip
+  - qgis=3.40
+  # interactive notebooks
+  - jupyter
+  - nbformat
+  # Python packages for Python checks
+  - black 
+  - isort
+  - mypy
+  - pep8
+  - flake8
+  - pylint
+  # SQL
+  - psycopg
+  # cuda
+  - cudatoolkit
+  - cuda-version=11
+  
