@@ -29,12 +29,12 @@ execute:
 ## Instalace
 
 - vícero možností - základní instalace, OSGeo4W atd.
-- pro integraci QGIS s komplexnímí Python knihovnami je nejlepší použít **Conda**
+- pro integraci QGIS s komplexními Python knihovnami je nejlepší použít **Conda**
 - vytvoření prostředí s QGIS a potřebnými knihovnami, nejméně problematické pro komplexní knihovny
 
 ## Algoritmy a postupy
 
 - většina algoritmů pro zpracování dat či komplexních postupů již existuje v knihovnách
-- velká část programátorské práce je převod dat mezi různými formáty pro zpracování či tvorba dílčích částí dat
+- velká část programátorské práce je převod dat mezi různými formáty pro zpracování či tvorba/uprava dílčích částí dat do požadovaných formátů dat
 
 # Dotazy? {.center}
