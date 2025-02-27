@@ -24,7 +24,9 @@ execute:
 
 - open source binding QGIS (C++) do Pythonu
 - nejkomplexnější API pro zpracování prostorových dat, využívá většinu zásadních GIS knihoven
-- umožňuje vytvářet pluginy ale i skripty  
+- umožňuje vytvářet pluginy ale i skripty
+- relativně unifikované prostředí pro přístup k různým typům dat - vektory, rastry, mesh i mračna bodů
+- stojí o úroveň výše, než jednoduché knihovny jako **GDAL/OGR**, **MDAL**, **PDAL** a podobné 
 
 ## Instalace
 
