@@ -5,12 +5,20 @@ date: 2025-03-05
 date-format: "YYYY-MM-DD"
 format: 
     revealjs
-footer: "Materiály dostupné:"
+footer: "Materiály dostupné na: [https://github.com/JanCaha/seminar-GIS_Ostrava_2025](https://github.com/JanCaha/seminar-GIS_Ostrava_2025)"
 code-line-numbers: true
 execute:
   echo: true
   eval: false
 ---
+
+## O mně
+
+- pedagog - výuka programování pro geoinformatiku
+- programátor/konzultant - Lutra Consulting
+  - pluginy pro QGIS
+  - QGIS 
+  - nástroje pro zpracování geodat
 
 ## QGIS Python API (PyQGIS)
 
