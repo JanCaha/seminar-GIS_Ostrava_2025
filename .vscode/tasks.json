@@ -1,0 +1,14 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Render presentation",
+            "type": "shell",
+            "command": "quarto render --output-dir prezentace --self-contained prezentace.qmd",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
