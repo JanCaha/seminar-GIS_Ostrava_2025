@@ -66,6 +66,13 @@ conda env create -f conda-environment.yml
 }
 ```
 
-## 
+## Python Knihovny geodata
+
+- shapely, fiona, rasterio - data
+- geopandas - datové ramce s geodaty
+- pysal či pygeoda - analýzy geodat 
+- většina analytických dat předpokládá vstup ve formátu `GeoDataFrame` z knihovny **geopandas**
+- konverze **QGIS** -> **geopandas**, **pandas** a případně zpět 
+
 
 # Dotazy? {.center}
