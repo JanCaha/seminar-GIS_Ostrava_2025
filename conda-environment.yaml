@@ -13,6 +13,8 @@ dependencies:
   - nbformat
   # libs
   - scipy
+  - geopandas
+  - pygeoda
   # Python packages for Python checks
   - black 
   - isort
