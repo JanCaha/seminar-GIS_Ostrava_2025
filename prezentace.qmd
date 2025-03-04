@@ -79,5 +79,41 @@ conda env create -f conda-environment.yml
 - většina analytických dat předpokládá vstup ve formátu `GeoDataFrame` z knihovny **geopandas**
 - konverze **QGIS** -> **geopandas**, **pandas** a případně zpět 
 
+## Příklad 1
+
+- použití QGIS projektu jako zdroje dat
+- extrakce vrstev
+- náhled na atributy vrstvy - joiny, virtuální pole
+
+## Příklad 2
+
+- vytvoření `GeoDataFrame` pro **geopandas** přímo v Pythonu z `QgsVectorLayer`
+- slouží pro zpracování dalšími Python knihovnami
+
+## Příklad 3
+
+- výpočet Moranova I pomocí knihovny `pygeoda`
+- vytvoření CSV pomocí QGIS API
+
+## Příklad 4
+
+- tvorba `DataFrame` pro **pandas** 
+- vytvoření histogramu pomocí `matplotlib`, uložení rastrového obrazu
+
+## Příklad 5
+
+- načtení CSV do QGIS projektu jako vrstvy a vytvoření joinu k existující vrstvě
+- vytvoření rendereru vrstvy
+- uložení upraveného projektu
+  
+# Příklad 6
+
+- práce s layout v QGIS projektu
+- úpravy layoutu a jeho prvků
+- export layout do PDF
+
+## Závěr
+
+- 
 
 # Dotazy? {.center}
