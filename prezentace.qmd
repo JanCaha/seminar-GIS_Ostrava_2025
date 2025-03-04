@@ -49,14 +49,13 @@ conda env create -f conda-environment.yml
 ```
 
 - **yaml** soubor je v repozitáři
-- 
 
 ## Nastavení ve **VS Code**
 
-- ve **VS Code** a patrně i dalších IDE nedojde úplně koretkně k detekci QGIS Python knihoven
-- kód běží korektně, ale IDE knihovny "nevidí", což je nepříjemné a nepraktické
+- ve **VS Code** a patrně i dalších IDE nedojde úplně korektně k detekci QGIS Python knihoven
+- kód běží správně, ale IDE knihovny "nevidí", což je nepříjemné a nepraktické
 - je nutné Pythonu "vnutit" lokaci knihoven, aby je IDE správně načetlo 
-- pro **PyQt5** je nutné instalovat jejich **stubs** aby IDE koretkně vidělo typy
+- pro **PyQt5** je nutné instalovat jejich **stubs** aby IDE správně vidělo typy
   
 ## Přidání **Python QGIS API** do **VS Code**
 
@@ -72,9 +71,11 @@ conda env create -f conda-environment.yml
 
 ## Python Knihovny geodata
 
-- shapely, fiona, rasterio - data
-- geopandas - datové ramce s geodaty
-- pysal či pygeoda - analýzy geodat 
+- **shapely**, **fiona**, **rasterio** - data
+- **geopandas** - datové ramce s geodaty
+- **pysal** či **pygeoda** - analýzy geodat 
+- **matplotlib** - vizualizace 
+- **scipy**, **numpy** atd. - výpočty a modely nad atributovými daty
 - většina analytických dat předpokládá vstup ve formátu `GeoDataFrame` z knihovny **geopandas**
 - konverze **QGIS** -> **geopandas**, **pandas** a případně zpět 
 
