@@ -28,15 +28,44 @@ execute:
 - relativně unifikované prostředí pro přístup k různým typům dat - vektory, rastry, mesh i mračna bodů
 - stojí o úroveň výše, než jednoduché knihovny jako **GDAL/OGR**, **MDAL**, **PDAL** a podobné 
 
-## Instalace
-
-- vícero možností - základní instalace, OSGeo4W atd.
-- pro integraci QGIS s komplexními Python knihovnami je nejlepší použít **Conda**
-- vytvoření prostředí s QGIS a potřebnými knihovnami, nejméně problematické pro komplexní knihovny
-
 ## Algoritmy a postupy
 
 - většina algoritmů pro zpracování dat či komplexních postupů již existuje v knihovnách
 - velká část programátorské práce je převod dat mezi různými formáty pro zpracování či tvorba/uprava dílčích částí dat do požadovaných formátů dat
+
+## Instalace
+
+- vícero možností - základní instalace **QGIS**, **OSGeo4W** atd.
+- pro integraci QGIS s komplexními Python knihovnami je nejlepší použít **Conda**
+- vytvoření prostředí s QGIS a potřebnými knihovnami, nejméně problematické pro komplexní knihovny
+- pro vývoj doporučuji IDE **VS Code** + extenze pro Python (nastavení v repositáři)
+
+## Tvorba prostředí
+
+- v **Conda** pomocí příkazu
+
+```bash
+conda env create -f conda-environment.yml
+```
+
+- **yaml** soubor je v repozitáři
+- 
+
+## Nastavení ve **VS Code**
+
+- ve **VS Code** a patrně i dalších IDE nedojde úplně koretkně k detekci QGIS Python knihoven
+- kód běží korektně, ale IDE knihovny "nevidí", což je nepříjemné a nepraktické
+- je nutné Pythonu "vnutit" lokaci knihoven, aby je IDE správně načetlo 
+- pro **PyQt5** je nutné instalovat jejich **stubs** aby IDE koretkně vidělo typy
+  
+```json
+{
+    "python.analysis.extraPaths": [
+        "/cesta_k_instalaci/miniconda3/envs/seminar_GISOVA/share/qgis/python"
+    ]
+}
+```
+
+## 
 
 # Dotazy? {.center}
