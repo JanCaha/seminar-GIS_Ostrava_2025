@@ -24,6 +24,10 @@ dependencies:
   - pylint
   # SQL
   - psycopg
+  # install from pip
+  - pip:
+    # pyqt5 stubs to support pyqt5 in mypy and typing 
+    - pyqt5-stubs
   # cuda
   # - cudatoolkit
   # - cuda-version=11
