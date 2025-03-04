@@ -38,4 +38,4 @@ plt.savefig(utils.file_in_data_path("histogram.png"), dpi=300, bbox_inches="tigh
 
 plt.close("all")
 
-# qgis.exitQgis()
+qgis.exitQgis()

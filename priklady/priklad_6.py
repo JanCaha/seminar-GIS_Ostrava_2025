@@ -28,7 +28,6 @@ assert layout is not None
 # přetypování na konkrétní typ - často důležité, protože se vrací obecné rozhraní (rodičovská třída)
 layout = typing.cast(QgsPrintLayout, layout)
 
-
 # extrakce komponenty layout podle jejího ID
 scale_bar = layout.itemById("ScaleBar")
 assert scale_bar is not None
@@ -38,11 +37,13 @@ scale_bar = typing.cast(QgsLayoutItemScaleBar, scale_bar)
 scale_bar.setUnitsPerSegment(100)
 scale_bar.setNumberOfSegments(3)
 
+# úprava titulku
 title = layout.itemById("Title")
 assert title is not None
 title = typing.cast(QgsLayoutItemLabel, title)
 title.setText("Mapa okresů")
 
+# nastavení obrázku na vytvořený histogram
 picture = layout.itemById("Picture")
 assert picture is not None
 picture = typing.cast(QgsLayoutItemPicture, picture)
@@ -50,11 +51,12 @@ picture.setPicturePath(utils.file_in_data_path("histogram.png").as_posix())
 
 project.write()
 
+# nastavení exportu do PDF
 pdf_settings = QgsLayoutExporter.PdfExportSettings()
 pdf_settings.dpi = 300
 pdf_settings.forceVectorOutput = True
 
-
+# export layout do PDF
 exporter = QgsLayoutExporter(layout)
 exporter.exportToPdf(utils.file_in_data_path("layout.pdf").as_posix(), pdf_settings)
 
