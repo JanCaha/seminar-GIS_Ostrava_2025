@@ -1,2 +1,3 @@
-prezentace.html
-prezentace_files
+/prezentace.html
+prezentace_files/*
+/.quarto/
