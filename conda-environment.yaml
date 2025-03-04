@@ -11,6 +11,8 @@ dependencies:
   # interactive notebooks
   - jupyter
   - nbformat
+  # libs
+  - scipy
   # Python packages for Python checks
   - black 
   - isort
@@ -21,6 +23,6 @@ dependencies:
   # SQL
   - psycopg
   # cuda
-  - cudatoolkit
-  - cuda-version=11
+  # - cudatoolkit
+  # - cuda-version=11
   
