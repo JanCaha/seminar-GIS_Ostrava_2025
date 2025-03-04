@@ -53,10 +53,12 @@ symbol.setColor(QColor("#7c89e9"))
 category_3 = QgsRendererCategory("Low-High", symbol.clone(), "Low-High")
 symbol.setColor(QColor("#b3b4bb"))
 category_4 = QgsRendererCategory("Not significant", symbol.clone(), "Not significant")
+symbol.setColor(QColor("#D78a87"))
+category_5 = QgsRendererCategory("High-Low", symbol.clone(), "High-Low")
 
 # tvorba rendereru
 renderer = QgsCategorizedSymbolRenderer(
-    f"{prefix}moran cluster label", [category_1, category_2, category_3, category_4]
+    f"{prefix}moran cluster label", [category_1, category_2, category_3, category_4, category_5]
 )
 
 # nastavení rendereru vrstvě okresy
