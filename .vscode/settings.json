@@ -1,6 +1,6 @@
 {
     "python.analysis.extraPaths": [
-        "${env:HOME}/miniconda3/envs/seminar_GISOVA/share/qgis/python"
+        "${env:HOME}/miniconda3/envs/seminar_GISOVA/share/qgis/python",
     ],
     "[python]": {
         "editor.codeActionsOnSave": {
