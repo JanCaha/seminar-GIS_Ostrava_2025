@@ -3,7 +3,14 @@
 import typing
 
 import utils
-from qgis.core import QgsApplication, QgsLayoutExporter, QgsLayoutItemLabel, QgsLayoutItemScaleBar, QgsPrintLayout
+from qgis.core import (
+    QgsApplication,
+    QgsLayoutExporter,
+    QgsLayoutItemLabel,
+    QgsLayoutItemPicture,
+    QgsLayoutItemScaleBar,
+    QgsPrintLayout,
+)
 
 qgis = QgsApplication([], False)
 qgis.initQgis()
@@ -35,6 +42,11 @@ title = layout.itemById("Title")
 assert title is not None
 title = typing.cast(QgsLayoutItemLabel, title)
 title.setText("Mapa okresů")
+
+picture = layout.itemById("Picture")
+assert picture is not None
+picture = typing.cast(QgsLayoutItemPicture, picture)
+picture.setPicturePath(utils.file_in_data_path("histogram.png").as_posix())
 
 project.write()
 
