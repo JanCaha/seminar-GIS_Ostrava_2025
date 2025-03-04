@@ -58,6 +58,10 @@ conda env create -f conda-environment.yml
 - je nutné Pythonu "vnutit" lokaci knihoven, aby je IDE správně načetlo 
 - pro **PyQt5** je nutné instalovat jejich **stubs** aby IDE koretkně vidělo typy
   
+## Přidání **Python QGIS API** do **VS Code**
+
+- v `settings.json`
+
 ```json
 {
     "python.analysis.extraPaths": [
