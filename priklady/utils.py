@@ -40,16 +40,22 @@ def load_project(project_path: Path) -> QgsProject:
 def vector_layer_by_name(project: QgsProject, layer_name: str, layer_order: int = 0) -> QgsVectorLayer:
     """Vrací vrstvu dle názvu"""
 
-    # získání vrstvy dle názvu
-    layer = project.mapLayersByName(layer_name)[layer_order]
+    # získání vrstev dle názvu
+    layers = project.mapLayersByName(layer_name)
 
-    if not layer:
+    # kontrola zda bylo něco nalezeno
+    if not layers:
         raise ValueError(f"Vrstva {layer_name} nebyla nalezena.")
+
+    # extrakce vrstvy dle pořadí
+    layer = layers[layer_order]
 
     # kontrola, zda se jedná o vektorovou vrstvu
     if not layer.type() == Qgis.LayerType.Vector:
         raise ValueError(f"Vrstva {layer_name} není vektorová vrstva.")
 
+    # typovací konstrukce pro MyPy, správné určení typu proměnné
+    # na samotný běh Pythonu nemá vliv
     layer = typing.cast(QgsVectorLayer, layer)
 
     # kontrola, zda je vrstva validní
@@ -72,14 +78,14 @@ def fields_as_dataframe(layer: QgsVectorLayer, id_field: str, fields_names: typi
     # fields pro pandas
     pandas_fields = {}
 
-    # extrahovat sloupce
+    # extrakce id sloupce
     field_id = fields.field(id_field)
     assert field_id is not None
 
     # typ id sloupce
-    if field_id.type() == QMetaType.QString:
+    if field_id.type() == QMetaType.Type.QString:
         field_id_type = "string"
-    elif field_id.type() == QMetaType.Int:
+    elif field_id.type() == QMetaType.Type.Int:
         field_id_type = "int64"
     else:
         raise ValueError(f"Neznámý typ sloupce {id_field}.")
@@ -92,11 +98,11 @@ def fields_as_dataframe(layer: QgsVectorLayer, id_field: str, fields_names: typi
         field = fields.field(field_name)
         assert field_name is not None
 
-        if field.type() == QMetaType.QString:
+        if field.type() == QMetaType.Type.QString:
             field_type = "string"
-        elif field.type() == QMetaType.Int:
+        elif field.type() == QMetaType.Type.Int:
             field_type = "int64"
-        elif field.type() == QMetaType.Double:
+        elif field.type() == QMetaType.Type.Double:
             field_type = "float64"
         else:
             raise ValueError(f"Neznámý typ sloupce {field_name}.")

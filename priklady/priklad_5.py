@@ -47,14 +47,14 @@ symbol = QgsFillSymbol()
 # nastavení barvy symbolu a následně kategorie pro 4 existující kategorie
 symbol.setColor(QColor("#e94c4c"))
 category_1 = QgsRendererCategory("High-High", symbol.clone(), "High-High")
-symbol.setColor(QColor("#4c5fe9"))
-category_2 = QgsRendererCategory("Low-Low", symbol.clone(), "Low-Low")
-symbol.setColor(QColor("#7c89e9"))
-category_3 = QgsRendererCategory("Low-High", symbol.clone(), "Low-High")
-symbol.setColor(QColor("#b3b4bb"))
-category_4 = QgsRendererCategory("Not significant", symbol.clone(), "Not significant")
 symbol.setColor(QColor("#D78a87"))
-category_5 = QgsRendererCategory("High-Low", symbol.clone(), "High-Low")
+category_2 = QgsRendererCategory("High-Low", symbol.clone(), "High-Low")
+symbol.setColor(QColor("#4c5fe9"))
+category_3 = QgsRendererCategory("Low-Low", symbol.clone(), "Low-Low")
+symbol.setColor(QColor("#7c89e9"))
+category_4 = QgsRendererCategory("Low-High", symbol.clone(), "Low-High")
+symbol.setColor(QColor("#b3b4bb"))
+category_5 = QgsRendererCategory("Not significant", symbol.clone(), "Not significant")
 
 # tvorba rendereru
 renderer = QgsCategorizedSymbolRenderer(
