@@ -11,7 +11,7 @@ dependencies:
   # interactive notebooks
   - jupyter
   - nbformat
-  # libs
+  # Data processing libs
   - scipy
   - geopandas
   - pygeoda
