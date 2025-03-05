@@ -1079,26 +1079,31 @@ Jan Caha
 <section id="qgis-python-api-pyqgis" class="slide level2">
 <h2>QGIS Python API (PyQGIS)</h2>
 <ul>
-<li>open source binding QGIS (C++) do Pythonu</li>
-<li>nejkomplexnější API pro zpracování prostorových dat, využívá většinu zásadních GIS knihoven</li>
+<li>open source binding QGIS (C++) do Pythonu, velká většina věcí, co lze dělat skrze GUI, lze řešit i z Pythonu</li>
 <li>umožňuje vytvářet pluginy ale i skripty</li>
 <li>relativně unifikované prostředí pro přístup k různým typům dat - vektory, rastry, mesh i mračna bodů</li>
-<li>stojí o úroveň výše, než jednoduché knihovny jako <strong>GDAL/OGR</strong>, <strong>MDAL</strong>, <strong>PDAL</strong> a podobné</li>
+<li>nejkomplexnější API pro zpracování prostorových dat, využívá většinu zásadních GIS knihoven</li>
+<li>stojí o úroveň výše, než jednoduché knihovny jako <strong>GDAL/OGR</strong>, <strong>MDAL</strong>, <strong>PDAL</strong>, <strong>GEOS</strong> a podobné</li>
 </ul>
 </section>
 <section id="algoritmy-a-postupy" class="slide level2">
 <h2>Algoritmy a postupy</h2>
 <ul>
 <li>většina algoritmů pro zpracování dat či komplexních postupů již existuje v knihovnách</li>
+<li>řada algoritmů existuje v podobě “proof of concept” k vědeckým článkům</li>
 <li>velká část programátorské práce je převod dat mezi různými formáty pro zpracování či tvorba/uprava dílčích částí dat do požadovaných formátů dat</li>
 </ul>
 </section>
 <section id="instalace" class="slide level2">
 <h2>Instalace</h2>
 <ul>
+<li>problém - Python + QGIS + Knihovny (významnější na Windows)</li>
 <li>vícero možností - základní instalace <strong>QGIS</strong>, <strong>OSGeo4W</strong> atd.</li>
-<li>pro integraci QGIS s komplexními Python knihovnami je nejlepší použít <strong>Conda</strong></li>
-<li>vytvoření prostředí s QGIS a potřebnými knihovnami, nejméně problematické pro komplexní knihovny</li>
+<li>pro integraci QGIS s komplexními Python knihovnami je nejlepší použít <strong>Conda</strong>
+<ul>
+<li>vytvoření prostředí s QGIS a potřebnými knihovnami</li>
+<li>nejméně problematické pro komplexní knihovny</li>
+</ul></li>
 <li>pro vývoj doporučuji IDE <strong>VS Code</strong> + extenze pro Python (nastavení v repositáři)</li>
 </ul>
 </section>
@@ -1106,6 +1111,7 @@ Jan Caha
 <h2>Tvorba prostředí</h2>
 <ul>
 <li>v <strong>Conda</strong> pomocí příkazu</li>
+<li>detekce konfliktů závislostí a vytvoření funkčního prostředí (pokud to lze!)</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href></a><span class="ex">conda</span> env create <span class="at">-f</span> conda-environment.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
@@ -1140,8 +1146,18 @@ Jan Caha
 <li><strong>pysal</strong> či <strong>pygeoda</strong> - analýzy geodat</li>
 <li><strong>matplotlib</strong> - vizualizace</li>
 <li><strong>scipy</strong>, <strong>numpy</strong> atd. - výpočty a modely nad atributovými daty</li>
+<li>řada dalších specifických knihoven</li>
 <li>většina analytických dat předpokládá vstup ve formátu <code>GeoDataFrame</code> z knihovny <strong>geopandas</strong></li>
 <li>konverze <strong>QGIS</strong> -&gt; <strong>geopandas</strong>, <strong>pandas</strong> a případně zpět</li>
+</ul>
+</section>
+<section id="příklady" class="slide level2">
+<h2>Příklady</h2>
+<ul>
+<li>jednoduchý QGIS projekt</li>
+<li>jedna vektorová vrstva, s virtuálním sloupcem</li>
+<li>jedna vrstva bez geometrie pro připojení k vektorové vrstvě</li>
+<li>jeden zkušební layout</li>
 </ul>
 </section>
 <section id="příklad-1" class="slide level2">
@@ -1193,7 +1209,10 @@ Jan Caha
 <section id="závěr" class="slide level2">
 <h2>Závěr</h2>
 <ul>
-<li></li>
+<li>QGIS může fungovat a funguje ve spojení s řadou knihoven</li>
+<li>je třeba navrhnout - vytvořit mezi vrstvu, pro předání dat QGIS &lt;-&gt; knihovna</li>
+<li>v QGIS lze řešit velkou část GIS práce, co QGIS neumí, lze řešit jinými nástroji</li>
+<li>automatizace i poměrně složitých postupů</li>
 </ul>
 </section></section>
 <section>
@@ -1216,26 +1235,31 @@ Jan Caha
 <section id="qgis-python-api-pyqgis-1" class="slide level2">
 <h2>QGIS Python API (PyQGIS)</h2>
 <ul>
-<li>open source binding QGIS (C++) do Pythonu</li>
-<li>nejkomplexnější API pro zpracování prostorových dat, využívá většinu zásadních GIS knihoven</li>
+<li>open source binding QGIS (C++) do Pythonu, velká většina věcí, co lze dělat skrze GUI, lze řešit i z Pythonu</li>
 <li>umožňuje vytvářet pluginy ale i skripty</li>
 <li>relativně unifikované prostředí pro přístup k různým typům dat - vektory, rastry, mesh i mračna bodů</li>
-<li>stojí o úroveň výše, než jednoduché knihovny jako <strong>GDAL/OGR</strong>, <strong>MDAL</strong>, <strong>PDAL</strong> a podobné</li>
+<li>nejkomplexnější API pro zpracování prostorových dat, využívá většinu zásadních GIS knihoven</li>
+<li>stojí o úroveň výše, než jednoduché knihovny jako <strong>GDAL/OGR</strong>, <strong>MDAL</strong>, <strong>PDAL</strong>, <strong>GEOS</strong> a podobné</li>
 </ul>
 </section>
 <section id="algoritmy-a-postupy-1" class="slide level2">
 <h2>Algoritmy a postupy</h2>
 <ul>
 <li>většina algoritmů pro zpracování dat či komplexních postupů již existuje v knihovnách</li>
+<li>řada algoritmů existuje v podobě “proof of concept” k vědeckým článkům</li>
 <li>velká část programátorské práce je převod dat mezi různými formáty pro zpracování či tvorba/uprava dílčích částí dat do požadovaných formátů dat</li>
 </ul>
 </section>
 <section id="instalace-1" class="slide level2">
 <h2>Instalace</h2>
 <ul>
+<li>problém - Python + QGIS + Knihovny (významnější na Windows)</li>
 <li>vícero možností - základní instalace <strong>QGIS</strong>, <strong>OSGeo4W</strong> atd.</li>
-<li>pro integraci QGIS s komplexními Python knihovnami je nejlepší použít <strong>Conda</strong></li>
-<li>vytvoření prostředí s QGIS a potřebnými knihovnami, nejméně problematické pro komplexní knihovny</li>
+<li>pro integraci QGIS s komplexními Python knihovnami je nejlepší použít <strong>Conda</strong>
+<ul>
+<li>vytvoření prostředí s QGIS a potřebnými knihovnami</li>
+<li>nejméně problematické pro komplexní knihovny</li>
+</ul></li>
 <li>pro vývoj doporučuji IDE <strong>VS Code</strong> + extenze pro Python (nastavení v repositáři)</li>
 </ul>
 </section>
@@ -1243,6 +1267,7 @@ Jan Caha
 <h2>Tvorba prostředí</h2>
 <ul>
 <li>v <strong>Conda</strong> pomocí příkazu</li>
+<li>detekce konfliktů závislostí a vytvoření funkčního prostředí (pokud to lze!)</li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href></a><span class="ex">conda</span> env create <span class="at">-f</span> conda-environment.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
@@ -1277,8 +1302,18 @@ Jan Caha
 <li><strong>pysal</strong> či <strong>pygeoda</strong> - analýzy geodat</li>
 <li><strong>matplotlib</strong> - vizualizace</li>
 <li><strong>scipy</strong>, <strong>numpy</strong> atd. - výpočty a modely nad atributovými daty</li>
+<li>řada dalších specifických knihoven</li>
 <li>většina analytických dat předpokládá vstup ve formátu <code>GeoDataFrame</code> z knihovny <strong>geopandas</strong></li>
 <li>konverze <strong>QGIS</strong> -&gt; <strong>geopandas</strong>, <strong>pandas</strong> a případně zpět</li>
+</ul>
+</section>
+<section id="příklady-1" class="slide level2">
+<h2>Příklady</h2>
+<ul>
+<li>jednoduchý QGIS projekt</li>
+<li>jedna vektorová vrstva, s virtuálním sloupcem</li>
+<li>jedna vrstva bez geometrie pro připojení k vektorové vrstvě</li>
+<li>jeden zkušební layout</li>
 </ul>
 </section>
 <section id="příklad-1-1" class="slide level2">
@@ -1330,7 +1365,10 @@ Jan Caha
 <section id="závěr-1" class="slide level2">
 <h2>Závěr</h2>
 <ul>
-<li></li>
+<li>QGIS může fungovat a funguje ve spojení s řadou knihoven</li>
+<li>je třeba navrhnout - vytvořit mezi vrstvu, pro předání dat QGIS &lt;-&gt; knihovna</li>
+<li>v QGIS lze řešit velkou část GIS práce, co QGIS neumí, lze řešit jinými nástroji</li>
+<li>automatizace i poměrně složitých postupů</li>
 </ul>
 </section></section>
 <section id="dotazy-1" class="title-slide slide level1 center">
