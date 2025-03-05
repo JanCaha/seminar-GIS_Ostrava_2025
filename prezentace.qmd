@@ -22,27 +22,31 @@ execute:
 
 ## QGIS Python API (PyQGIS)
 
-- open source binding QGIS (C++) do Pythonu
-- nejkomplexnější API pro zpracování prostorových dat, využívá většinu zásadních GIS knihoven
+- open source binding QGIS (C++) do Pythonu, velká většina věcí, co lze dělat skrze GUI, lze řešit i z Pythonu
 - umožňuje vytvářet pluginy ale i skripty
 - relativně unifikované prostředí pro přístup k různým typům dat - vektory, rastry, mesh i mračna bodů
-- stojí o úroveň výše, než jednoduché knihovny jako **GDAL/OGR**, **MDAL**, **PDAL** a podobné 
+- nejkomplexnější API pro zpracování prostorových dat, využívá většinu zásadních GIS knihoven
+- stojí o úroveň výše, než jednoduché knihovny jako **GDAL/OGR**, **MDAL**, **PDAL**, **GEOS** a podobné 
 
 ## Algoritmy a postupy
 
 - většina algoritmů pro zpracování dat či komplexních postupů již existuje v knihovnách
+- řada algoritmů existuje v podobě "proof of concept" k vědeckým článkům
 - velká část programátorské práce je převod dat mezi různými formáty pro zpracování či tvorba/uprava dílčích částí dat do požadovaných formátů dat
 
 ## Instalace
 
+- problém - Python + QGIS + Knihovny (významnější na Windows)
 - vícero možností - základní instalace **QGIS**, **OSGeo4W** atd.
 - pro integraci QGIS s komplexními Python knihovnami je nejlepší použít **Conda**
-- vytvoření prostředí s QGIS a potřebnými knihovnami, nejméně problematické pro komplexní knihovny
+  - vytvoření prostředí s QGIS a potřebnými knihovnami
+  - nejméně problematické pro komplexní knihovny
 - pro vývoj doporučuji IDE **VS Code** + extenze pro Python (nastavení v repositáři)
 
 ## Tvorba prostředí
 
 - v **Conda** pomocí příkazu
+- detekce konfliktů závislostí a vytvoření funkčního prostředí (pokud to lze!)
 
 ```bash
 conda env create -f conda-environment.yml
@@ -76,8 +80,16 @@ conda env create -f conda-environment.yml
 - **pysal** či **pygeoda** - analýzy geodat 
 - **matplotlib** - vizualizace 
 - **scipy**, **numpy** atd. - výpočty a modely nad atributovými daty
+- řada dalších specifických knihoven
 - většina analytických dat předpokládá vstup ve formátu `GeoDataFrame` z knihovny **geopandas**
 - konverze **QGIS** -> **geopandas**, **pandas** a případně zpět 
+
+## Příklady
+
+- jednoduchý QGIS projekt
+- jedna vektorová vrstva, s virtuálním sloupcem
+- jedna vrstva bez geometrie pro připojení k vektorové vrstvě
+- jeden zkušební layout
 
 ## Příklad 1
 
@@ -114,6 +126,9 @@ conda env create -f conda-environment.yml
 
 ## Závěr
 
-- 
+- QGIS může fungovat a funguje ve spojení s řadou knihoven
+- je třeba navrhnout - vytvořit mezi vrstvu, pro předání dat QGIS <-> knihovna
+- v QGIS lze řešit velkou část GIS práce, co QGIS neumí, lze řešit jinými nástroji
+- automatizace i poměrně složitých postupů
 
-# Dotazy? {.center}
+# Dotazy?{.center}
