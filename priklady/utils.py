@@ -8,6 +8,7 @@ from qgis.PyQt.QtCore import QMetaType
 
 
 def data_path() -> Path:
+    """Vrací cestu k adresáři s daty"""
     return pathlib.Path(__file__).parent.parent / "data"
 
 
